@@ -3,16 +3,20 @@ titulo: "Google Play Games League: Free Fire y Free Fire MAX – Reglas oficiale
 id: "google-play-games-league-ff-2026-es"
 jogo: "Free Fire / Free Fire MAX"
 competicao: "Google Play Games League"
+regiao: "Global (32 países)"
 temporada: "2026"
 versao: ""
 tipo_documento: "Regras oficiais de competição promocional"
-status_biblioteca: "coletável"
+organizador: "Google LLC (patrocinador) e Garena (administradora)"
+procedencia: "Oficial (site do organizador)"
+acesso: "coletável"
 url: "https://services.google.com/fh/files/misc/gpp-leagues-free-fire-2026-es-es.pdf"
+fonte_original: ""
 sha256: "18e9a26638ca83d3cbde3235fedb1f131055ea1fdf12ccbc4bbe91fcc0322465"
 paginas: "6"
 idioma: "es"
-baixado_em: "2026-10-24T22:04:30Z"
-fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
+baixado_em: "2026-10-24T22:37:17Z"
+acervo: "freefire-esports-regras (https://github.com/vitoriaveig/freefire-esports-regras)"
 ---
 <!-- página 1 -->
                               Google Play Games League: Free Fire y Free Fire MAX
