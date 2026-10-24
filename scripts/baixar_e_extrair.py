@@ -176,12 +176,13 @@ def sheet_para_csvs(html, destino, texto_id):
 
 def cabecalho(doc, meta):
     linhas = ["---"]
-    for k in ["titulo", "id", "jogo", "competicao", "temporada", "versao", "tipo_documento", "status_biblioteca", "url"]:
+    for k in ["titulo", "id", "jogo", "competicao", "regiao", "temporada", "versao", "tipo_documento", "organizador",
+              "procedencia", "acesso", "url", "fonte_original"]:
         linhas.append(f'{k}: "{str(doc.get(k, "")).replace(chr(34), chr(39))}"')
     for k in ["sha256", "paginas", "idioma", "baixado_em"]:
         linhas.append(f'{k}: "{meta.get(k, "")}"')
     if doc.get("mesmo_arquivo_que"): linhas.append(f'tambem_listado_como: "{doc["mesmo_arquivo_que"]}"')
-    linhas += ["fonte: \"Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)\"", "---", ""]
+    linhas += ["acervo: \"freefire-esports-regras (https://github.com/vitoriaveig/freefire-esports-regras)\"", "---", ""]
     return "\n".join(linhas)
 
 
@@ -214,6 +215,18 @@ def main():
     feitos = set()
     for tid, d in unicos.items():
         prev = anterior.get(tid)
+        if d.get("acesso", "").startswith("fornecido"):
+            # arquivo entregue pela pesquisadora: o texto já foi extraído e versionado (scripts/incluir_arquivo_local.py)
+            if (raiz / "textos" / f"{tid}.md").exists():
+                manifest[tid] = prev if prev and prev.get("status") == "ok" else {
+                    **{k: "" for k in CAMPOS_MANIFEST}, "texto_id": tid, "chave_arquivo": d["chave_arquivo"],
+                    "titulo": d["titulo"], "url": d["url"], "status": "ok",
+                    "detalhe": "arquivo fornecido pela pesquisadora", "arquivo_texto": f"textos/{tid}.md"}
+            else:
+                manifest[tid] = {**{k: "" for k in CAMPOS_MANIFEST}, "texto_id": tid, "chave_arquivo": d["chave_arquivo"],
+                                 "titulo": d["titulo"], "url": d["url"], "status": "nao_coletado",
+                                 "detalhe": "arquivo fornecido, mas o texto ainda não foi incluído", "baixado_em": agora()}
+            continue
         if not d.get("acesso", "coletável").startswith("coletável"):
             manifest[tid] = {**{k: "" for k in CAMPOS_MANIFEST}, "texto_id": tid, "chave_arquivo": d["chave_arquivo"],
                              "titulo": d["titulo"], "url": d["url"], "status": "nao_coletado", "detalhe": d["acesso"],
@@ -315,6 +328,8 @@ def main():
         manifest[tid] = reg
         print(f"[{reg['status']}] {tid} {reg['detalhe']}", flush=True)
 
+    validos = {Path(d["texto"]).stem for d in docs}
+    manifest = {k: v for k, v in manifest.items() if k in validos}  # remove documentos que saíram do catálogo
     with open(manifest_path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=CAMPOS_MANIFEST); w.writeheader()
         for k in sorted(manifest): w.writerow({c: manifest[k].get(c, "") for c in CAMPOS_MANIFEST})
