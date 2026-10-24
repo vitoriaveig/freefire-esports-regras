@@ -61,8 +61,9 @@ def detectar_idioma(txt):
     if cjk > letras * 0.2: return "zh"
     palavras = re.findall(r"[a-záéíóúâêôãõçñü]+", amostra.lower())
     sw = {"en": {"the", "and", "of", "to", "shall", "be", "team", "player", "will", "must"},
-          "pt": {"de", "e", "o", "a", "os", "das", "do", "da", "deve", "equipe", "jogador", "não"},
-          "es": {"el", "los", "las", "del", "equipo", "jugador", "deberá", "y", "por"},
+          "pt": {"os", "as", "do", "da", "dos", "das", "não", "uma", "equipe", "jogador", "deverá", "em", "ao"},
+          "es": {"el", "la", "los", "las", "del", "que", "en", "una", "equipo", "jugador", "deberá", "y", "al"},
+          "id": {"dan", "yang", "di", "untuk", "dengan", "tim", "pemain", "akan", "harus", "dalam", "tidak"},
           "fr": {"le", "les", "des", "du", "équipe", "joueur", "doit", "et"},
           "de": {"der", "die", "und", "das", "spieler", "muss", "mannschaft"}}
     cont = {k: sum(1 for w in palavras if w in v) for k, v in sw.items()}
@@ -308,7 +309,8 @@ def main():
         except Exception as e:  # registra a falha e segue
             msg = str(e)
             if "404" in msg and "sanity" in msg: msg = "link quebrado na própria Biblioteca (HTTP 404). " + msg
-            elif "401" in msg or "403" in msg: msg = "documento Google com acesso restrito (não público). " + msg
+            elif ("401" in msg or "403" in msg or "410" in msg) and "google.com" in msg: msg = "documento Google indisponível ou restrito. " + msg
+            elif "401" in msg or "403" in msg: msg = "acesso negado pelo site. " + msg
             reg["status"] = "erro"; reg["detalhe"] = msg[:300]
         manifest[tid] = reg
         print(f"[{reg['status']}] {tid} {reg['detalhe']}", flush=True)
