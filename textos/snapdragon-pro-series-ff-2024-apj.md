@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/4/46/Snapdragon_Pro_Series_Free_Fire
 sha256: "5802d16ca205c8fc1571d0b8ec9dae61dcd0af96a71474559b3515e8dc497424"
 paginas: "11"
 idioma: "en"
-baixado_em: "2026-10-24T21:55:26Z"
+baixado_em: "2026-10-24T22:03:49Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

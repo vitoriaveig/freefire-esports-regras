@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/6/6d/FFWS_MENA_2026_Spring_Rulebook_
 sha256: "4d56c515d0ee79af57d60ce5759f27446abfadfb2575a0c48c214a104da5c3e7"
 paginas: "36"
 idioma: "en"
-baixado_em: "2026-10-24T21:54:52Z"
+baixado_em: "2026-10-24T22:03:15Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

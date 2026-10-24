@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/5/55/FFWS_Africa_2026_Spring_Ruleboo
 sha256: "cb5f8714dda54ed7d58431fb76e7452fc012bdc690c674328d1f0c68fb9501ef"
 paginas: "40"
 idioma: "en"
-baixado_em: "2026-10-24T21:55:00Z"
+baixado_em: "2026-10-24T22:03:24Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

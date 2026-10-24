@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/e/e3/Free_Fire_World_Series_Latin_Am
 sha256: "98c59be6cb330347787985a39789b5d795546b8041d6fc5d6b8af3ba0d558d17"
 paginas: "49"
 idioma: "es"
-baixado_em: "2026-10-24T21:54:34Z"
+baixado_em: "2026-10-24T22:02:58Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

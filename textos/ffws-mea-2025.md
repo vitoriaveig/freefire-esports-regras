@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/b/bf/FFWS_MEA_2025_Rulebook_%28Engli
 sha256: "579129d9ef4ce8f7ebf1d1ce853beb80ec3388e5497b4c934315c8e203d74c61"
 paginas: "33"
 idioma: "en"
-baixado_em: "2026-10-24T21:54:47Z"
+baixado_em: "2026-10-24T22:03:11Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

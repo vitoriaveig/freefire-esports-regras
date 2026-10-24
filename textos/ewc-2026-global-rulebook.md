@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/2/20/EWC_2026_Global_Rulebook.pdf"
 sha256: "ecb33c7e7a5d620c41fc3d208b4cd3fa5011657f8950572727e00d04f3f0dddb"
 paginas: "51"
 idioma: "en"
-baixado_em: "2026-10-24T21:54:29Z"
+baixado_em: "2026-10-24T22:02:53Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

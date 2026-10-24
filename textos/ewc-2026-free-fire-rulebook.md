@@ -11,7 +11,7 @@ url: "https://cdn.esportsworldcup.com/resources/uploads/Free_Fire_at_EWC_26_Rule
 sha256: "95ff3969d8494f8d2d28ca41eec34f62387c7bb66275cdb786bc69daa6546788"
 paginas: "29"
 idioma: "en"
-baixado_em: "2026-10-24T21:54:27Z"
+baixado_em: "2026-10-24T22:02:51Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

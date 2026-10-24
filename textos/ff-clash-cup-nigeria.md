@@ -3,7 +3,7 @@ titulo: "Free Fire Clash Cup Nigeria Rulebook"
 id: "ff-clash-cup-nigeria"
 jogo: "Free Fire"
 competicao: "Free Fire Clash Cup Nigeria"
-temporada: "a verificar"
+temporada: "2026"
 versao: ""
 tipo_documento: "Regulamento de competição"
 status_biblioteca: "coletável"
@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/b/b9/Free_Fire_Clash_Cup_Nigeria_Rul
 sha256: "bafe26c9df949137315d7b725ddef81949ccfb13a3e3a6bc12676d924cf350cd"
 paginas: "29"
 idioma: "en"
-baixado_em: "2026-10-24T21:55:21Z"
+baixado_em: "2026-10-24T22:03:45Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

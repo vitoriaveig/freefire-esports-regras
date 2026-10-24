@@ -10,8 +10,8 @@ status_biblioteca: "coletável"
 url: "https://liquipedia.net/commons/images/b/b4/FFNS_2025_Fall_Rulebook.pdf"
 sha256: "9f979fed5a5e556040aa100dbd0bb7b7a8f153d9153e3dfdf805c69b887e6fed"
 paginas: "29"
-idioma: ""
-baixado_em: "2026-10-24T21:55:13Z"
+idioma: "id"
+baixado_em: "2026-10-24T22:03:37Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

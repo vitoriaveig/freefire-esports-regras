@@ -11,7 +11,7 @@ url: "https://liquipedia.net/commons/images/8/8b/FFWS_LATAM_2025_Rulebook_%28Spa
 sha256: "ae64de4e711f7a2b1f25eebb8d0ccb95981037cdf8bf813e6d191963fe3fe9b1"
 paginas: "43"
 idioma: "es"
-baixado_em: "2026-10-24T21:54:43Z"
+baixado_em: "2026-10-24T22:03:06Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

@@ -10,8 +10,8 @@ status_biblioteca: "coletável"
 url: "https://services.google.com/fh/files/misc/gpp-leagues-free-fire-2026-es-es.pdf"
 sha256: "18e9a26638ca83d3cbde3235fedb1f131055ea1fdf12ccbc4bbe91fcc0322465"
 paginas: "6"
-idioma: "pt"
-baixado_em: "2026-10-24T21:56:07Z"
+idioma: "es"
+baixado_em: "2026-10-24T22:04:30Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->

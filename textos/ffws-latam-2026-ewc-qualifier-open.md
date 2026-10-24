@@ -10,8 +10,8 @@ status_biblioteca: "coletável"
 url: "https://liquipedia.net/commons/images/f/fb/FFWS_LATAM_2026_EWC_Qualifier_Open_Rulebook_%28Spanish%29.pdf"
 sha256: "f13103805edcd14cd504658d4f53bffcb29493376adb420fb6845fc0a6500aa4"
 paginas: "9"
-idioma: "pt"
-baixado_em: "2026-10-24T21:54:39Z"
+idioma: "es"
+baixado_em: "2026-10-24T22:03:02Z"
 fonte: "Riot Games – Biblioteca de Operações Competitivas (competitiveops.riotgames.com)"
 ---
 <!-- página 1 -->
