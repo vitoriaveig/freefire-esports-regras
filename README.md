@@ -27,6 +27,7 @@ transparência normativa entre as três empresas já é, em si, um dado de pesqu
 | Cópia comunitária (Liquipedia Commons) | Enviado por usuários da Liquipedia, em geral sem fonte declarada. Usar com essa ressalva. |
 | Cópia em repositório de terceiros | Scribd, Studocu etc. Catalogado, mas **não coletado** (acesso restrito). |
 | Documento público de origem a verificar | Público, mas sem autoria clara. |
+| Cópia fornecida pela pesquisadora | PDF entregue pela pesquisadora, sem link público de download. O texto extraído é versionado; o PDF, não. |
 
 A coluna `acesso` diz se o documento foi coletado (`coletável`) ou não (restrito ou indisponível, com o motivo).
 
@@ -51,8 +52,9 @@ escolares e universitários, salvo se a pesquisa pedir.
 
 ## Como incluir um documento
 
-1. Acrescente uma linha em `catalogo/fontes.csv` (pode editar direto no GitHub).
-2. O commit dispara o workflow, que baixa o documento e extrai o texto.
+**Com link público:** acrescente uma linha em `catalogo/fontes.csv` (pode editar direto no GitHub). O commit dispara o workflow, que baixa o documento e extrai o texto.
+
+**Sem link público (arquivo próprio):** acrescente a linha com `acesso` começando por `fornecido` e `url` no formato `arquivo-fornecido:<nome do arquivo>`; depois rode `python scripts/gerar_catalogo.py && python scripts/incluir_arquivo_local.py <id> <arquivo.pdf>` e envie `catalogo/fontes.csv`, `textos/<id>.md` e `manifest.csv`. Antes, compare o SHA-256 do arquivo com o `manifest.csv` para não duplicar documentos.
 
 ## Uso
 
