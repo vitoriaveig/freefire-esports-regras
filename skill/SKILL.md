@@ -33,6 +33,8 @@ Filtros do buscador: `--jogo`, `--competicao`, `--regiao`, `--temporada`, `--tip
 
 Confira no `manifest.csv` se o texto está `ok`. `nao_coletado` indica documento só catalogado (Scribd, Studocu, site da Garena fora do ar etc.; o motivo está em `detalhe`). Se o usuário tiver o PDF, peça que anexe.
 
+**Quando o usuário anexar um regulamento:** (1) calcule o SHA-256 e compare com `manifest.csv`; se já existir, só registre na `nota` que ele confirma a cópia; (2) se for novo, leia as primeiras páginas para identificar competição, temporada, versão, organizador e idioma; (3) acrescente a linha em `catalogo/fontes.csv` com `acesso` = "fornecido pela pesquisadora (texto extraído do PDF)", `procedencia` = "Cópia fornecida pela pesquisadora" e `url` = `arquivo-fornecido:<nome do arquivo>`; (4) num clone do repositório, rode `python scripts/gerar_catalogo.py && python scripts/incluir_arquivo_local.py <id> <arquivo>`; (5) envie ao GitHub `catalogo/fontes.csv`, `textos/<id>.md` e `manifest.csv` (pelo navegador, se não houver acesso por git). Nunca versione o PDF original. Registre na `nota` sinais de que o PDF não é o original (ex.: gerado por conversor em data posterior).
+
 **Restrições:** não tente contornar bloqueios de sites (robots, login, certificado inválido) nem baixar de Scribd/Studocu. Para incluir um documento novo, oriente o usuário a acrescentar uma linha em `catalogo/fontes.csv` no GitHub; o workflow coleta sozinho.
 
 ## 2. Como ler o acervo do Free Fire
@@ -43,6 +45,7 @@ Confira no `manifest.csv` se o texto está `ok`. `nao_coletado` indica documento
 
 - *Oficial (site da Garena / documento publicado pela Garena / site do organizador)*: pode ser citado como fonte primária.
 - *Cópia comunitária (Liquipedia Commons)*: enviada por usuários, em geral sem fonte declarada. Cite com a ressalva e confira versão e data no próprio texto.
+- *Cópia fornecida pela pesquisadora*: PDF entregue pela usuária, sem link público; cite como "cópia em posse da autora" e indique a provável origem quando houver (coluna `fonte_original`).
 - *Cópia em repositório de terceiros* e *origem a verificar*: só catalogadas ou com autoria a confirmar.
 
 **Camadas normativas** (quando existirem): política da plataforma (Abuse Policy da Garena, para todos os jogadores) → regulamento do circuito (FFWS regional, liga nacional) → regras do evento ou da etapa (qualificatórias, finais) → regulamento do organizador terceiro quando o Free Fire está em evento multijogo (EWC: Global Rulebook + rulebook do Free Fire, em geral com cláusula de precedência). Procure a cláusula de precedência no texto.
@@ -51,7 +54,7 @@ Confira no `manifest.csv` se o texto está `ok`. `nao_coletado` indica documento
 
 **Achados de estrutura úteis para a análise:** vários regulamentos da Garena (FFWS MENA, MEA, Africa, FFNS, FFMC, Clash Cup Nigeria) seguem um mesmo modelo global ("Overview / Definitions / Purpose & Position / Adjustment / Validity"), o que permite comparar regiões seção a seção; a FFWS LATAM usa outro modelo, em espanhol; a EWC Qualifier Open LATAM 2026 é operada por um terceiro (ProSur). Confirme no texto antes de afirmar.
 
-**Glossário.** FFWS = Free Fire World Series (circuito oficial; regiões como Brasil, LATAM, SEA, MENA/MEA, África, EUA, Bangladesh; Global Finals). FFNS = Free Fire Nusantara Series (Indonésia). FFMC = Free Fire Malaysia Championship. FFIC = Free Fire India Championship. FFML = Free Fire Master League (Indonésia). LBFF = Liga Brasileira de Free Fire (séries A, B, C; substituída pela FFWS BR). LAFF = Liga Ascensão de Free Fire. COPA FF = copa brasileira da Garena. EWC = Esports World Cup. Booyah = vitória em uma queda.
+**Glossário.** FFWS = Free Fire World Series (circuito oficial; regiões como Brasil, LATAM, SEA, MENA/MEA, África, EUA, Bangladesh; Global Finals). FFNS = Free Fire Nusantara Series (Indonésia). FFMC = Free Fire Malaysia Championship. FFIC = Free Fire India Championship. FFML = Free Fire Master League (Indonésia). LBFF = Liga Brasileira de Free Fire (séries A, B, C; substituída pela FFWS BR; a Série C de 2020 era operada pela Player1 com a Garena Brasil e a LnK). LAFF = Liga Ascensão de Free Fire (divisão de acesso à FFWS BR). Copa NFA = torneio independente da Liga NFA Entretenimento. COPA FF = copa brasileira da Garena. EWC = Esports World Cup. Booyah = vitória em uma queda.
 
 ## 3. Modo consulta rápida
 
@@ -78,7 +81,7 @@ python3 comparar_corpora.py --riot-jogo VALORANT --riot-temporada 2026 --ff-proc
 - Corpora: Free Fire (este acervo); Riot (https://github.com/vitoriaveig/riot-esports-regras, só regulamentos, políticas, códigos e índices de penalidades ativos, por padrão); Valve (https://github.com/ValveSoftware/counter-strike_rules_and_regs: requisitos de operação de torneios, exceções, regulamento suplementar dos Majors e diretrizes de itens).
 - Saídas: `comparativo_documentos.csv` (documento × tema: presença, ocorrências, por 1.000 palavras) e `comparativo_resumo.csv` (corpus × tema: % de documentos e taxa mediana).
 - O livro de códigos (`comparativo/temas.csv`) tem 30 temas e 3 marcadores deônticos (obrigação, proibição, permissão), com expressões em inglês, português, espanhol e indonésio. Para um tema novo, acrescente uma linha com a expressão regular.
-- **Interprete com cuidado** e diga isso no texto: (1) a Valve regula organizadores terceiros, enquanto Riot e Garena regulam as próprias ligas; (2) os corpora têm tamanhos muito diferentes (em out/2026: Riot 70 documentos normativos ativos, Valve 4, Free Fire 16 coletados de 30 catalogados); (3) idiomas diferentes afetam a contagem por dicionário; (4) presença de termo não é presença de regra. Use os números para mapear e escolher o que ler, e confirme com os trechos (`--trechos`) e a leitura integral.
+- **Interprete com cuidado** e diga isso no texto: (1) a Valve regula organizadores terceiros, enquanto Riot e Garena regulam as próprias ligas; (2) os corpora têm tamanhos muito diferentes (em out/2026: Riot 70 documentos normativos ativos, Valve 4, Free Fire 19 com texto de 32 catalogados); (3) idiomas diferentes afetam a contagem por dicionário; (4) presença de termo não é presença de regra. Use os números para mapear e escolher o que ler, e confirme com os trechos (`--trechos`) e a leitura integral.
 - Eixos analíticos sugeridos: transparência normativa (acesso público aos regulamentos), centralização do poder (cláusulas de discricionariedade, recursos e arbitragem), proteção de menores, integridade (apostas, manipulação, órgãos externos como ESIC), especificidades mobile e battle royale, e densidade deôntica.
 
 ## 6. Rigor e entrega
